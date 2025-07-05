@@ -7,11 +7,11 @@ First, run the development server:
 ```bash
 npm run dev
 # or
-yarn dev
+npm run format
 # or
-pnpm dev
+npm run test
 # or
-bun dev
+npm run build
 ```
 
 # Next.js Countries Explorer
