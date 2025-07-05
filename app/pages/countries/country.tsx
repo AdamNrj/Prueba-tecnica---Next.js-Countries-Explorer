@@ -2,6 +2,7 @@ import { getCountryByCode } from "@/core/useCases/useCasesCountries";
 import Navbar from "@/components/ui/navbar";
 import FlagImage from "@/components/ui/flag-image";
 import BackButton from "@/components/ui/back-button";
+import { notFound } from "next/navigation";
 
 import {
   MapPin,
@@ -17,7 +18,13 @@ interface CountryPageProps {
 }
 
 export default async function CountryPage({ params }: CountryPageProps) {
-  const country = await getCountryByCode(params.id);
+  let country;
+  try {
+    country = await getCountryByCode(params.id);
+  } catch (err) {
+    console.error("Error fetching country:", err);
+    return notFound();
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-800 transition-colors duration-500">
@@ -41,7 +48,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
                   {country.name.common}
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-400 font-medium">
-                  {country.region} • {country.subregion}
+                  {country.region} • {country.subregion || "N/A"}
                 </p>
               </div>
             </div>
