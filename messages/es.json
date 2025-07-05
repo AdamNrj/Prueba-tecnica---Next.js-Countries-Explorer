@@ -1,6 +1,9 @@
 {
   "HomePage": {
-    "title": "Hola Mundo!",
-    "about": "Go to the about page"
+    "title": "¡Bienvenido!",
+    "discoverTitle": "Descubre países",
+    "discoverSubtitle": "Haz clic en cualquier país para explorar información detallada",
+    "countriesFound": "países encontrados",
+    "ctaButton": "Explorar más"
   }
 }
