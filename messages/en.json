@@ -4,7 +4,11 @@
     "discoverTitle": "Discover Countries",
     "discoverSubtitle": "Click on any country to explore detailed information",
     "countriesFound": "countries found",
-    "ctaButton": "Explore More"
+    "ctaButton": "Explore More",
+    "loading": "Loading countries...",
+    "noResults": "No countries found with that name.",
+    "fetchError": "Failed to load countries. Please try again.",
+    "tryAgain": "Try again"
   },
   "Navbar": {
     "title": "Countries Explorer",
@@ -24,7 +28,7 @@
   },
   "SearchBar": {
     "placeholder": "Search for a country...",
-    "popularSearches": "Popular Searches"
+    "suggestions": "Suggestions"
   },
   "CountryCard": {
     "capital": "Capital City",

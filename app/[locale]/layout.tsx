@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
+import { CountryProvider } from "@/providers/country-context";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getLocale } from "next-intl/server";
 
@@ -34,9 +35,11 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          <NextIntlClientProvider messages={messages} locale={locale}>
-            {children}
-          </NextIntlClientProvider>
+          <CountryProvider>
+            <NextIntlClientProvider messages={messages} locale={locale}>
+              {children}
+            </NextIntlClientProvider>
+          </CountryProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -4,7 +4,11 @@
     "discoverTitle": "Descubre países",
     "discoverSubtitle": "Haz clic en cualquier país para explorar información detallada",
     "countriesFound": "países encontrados",
-    "ctaButton": "Explorar más"
+    "ctaButton": "Explorar más",
+    "loading": "Cargando países...",
+    "noResults": "No se encontraron países con ese nombre.",
+    "fetchError": "Error al cargar los países. Por favor, intenta de nuevo.",
+    "tryAgain": "Intentar de nuevo"
   },
   "Navbar": {
     "title": "Explorador de Países",
@@ -23,8 +27,8 @@
     }
   },
   "SearchBar": {
-    "placeholder": "Busca un país...",
-    "popularSearches": "Búsquedas populares"
+    "placeholder": "Buscar un país...",
+    "suggestions": "Sugerencias"
   },
   "CountryCard": {
     "capital": "Capital",

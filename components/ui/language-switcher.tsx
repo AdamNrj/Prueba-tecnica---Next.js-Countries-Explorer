@@ -35,7 +35,9 @@ export default function LanguageSwitcher() {
           className="group h-10 px-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-500 hover:bg-red-50 dark:hover:bg-red-950/20 transition-all duration-300 hover:scale-105 bg-transparent"
         >
           <Languages className="h-4 w-4 mr-2 text-red-500 group-hover:text-red-600 transition-colors duration-300" />
-          <span className="font-medium uppercase">{currentLocale}</span>
+          <span className="font-medium uppercase dark:text-white">
+            {currentLocale}
+          </span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
