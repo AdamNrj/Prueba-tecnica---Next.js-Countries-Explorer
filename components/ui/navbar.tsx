@@ -1,10 +1,13 @@
 "use client";
 
 import { Globe } from "lucide-react";
+import { useTranslations } from "next-intl";
 import ModeToggle from "./mode-toggle";
 import LanguageSwitcher from "./language-switcher";
 
 export default function Navbar() {
+  const t = useTranslations("Navbar");
+
   return (
     <nav className="sticky top-0 z-50 glass-effect border-b border-red-100 dark:border-red-900/20">
       <div className="container mx-auto px-4 py-4">
@@ -17,10 +20,10 @@ export default function Navbar() {
             </div>
             <div>
               <h1 className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-                Countries Explorer
+                {t("title")}
               </h1>
               <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
-                Discover the World
+                {t("subtitle")}
               </p>
             </div>
           </div>
