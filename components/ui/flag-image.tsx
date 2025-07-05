@@ -10,11 +10,7 @@ interface FlagImageProps {
   className?: string;
 }
 
-export default function FlagImage({
-  src,
-  alt,
-  className = "",
-}: FlagImageProps) {
+export default function FlagImage({ src, alt, className = "" }: FlagImageProps) {
   const [imageError, setImageError] = useState(false);
 
   const t = useTranslations("FlagImage");

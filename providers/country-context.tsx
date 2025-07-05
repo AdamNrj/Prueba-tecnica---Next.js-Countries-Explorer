@@ -1,10 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import {
-  getAllCountries,
-  searchCountries,
-} from "@/core/useCases/useCasesCountries";
+import { getAllCountries, searchCountries } from "@/core/useCases/useCasesCountries";
 import { Country } from "@/core/domain/country";
 
 interface CountryContextType {
@@ -35,9 +32,7 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const data = search
-          ? await searchCountries(search)
-          : await getAllCountries();
+        const data = search ? await searchCountries(search) : await getAllCountries();
         setCountries(data);
         setCurrentPage(1);
         // eslint-disable-next-line @typescript-eslint/no-unused-vars

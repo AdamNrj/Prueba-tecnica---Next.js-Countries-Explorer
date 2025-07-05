@@ -35,11 +35,7 @@ export default function HeroSection() {
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
             {t("subtitle")}
-            <span className="text-red-500 font-semibold">
-              {" "}
-              {t("subtitleHighlight")}
-            </span>
-            .
+            <span className="text-red-500 font-semibold"> {t("subtitleHighlight")}</span>.
           </p>
 
           {/* Stats */}

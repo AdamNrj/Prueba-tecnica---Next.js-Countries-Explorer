@@ -14,6 +14,33 @@ pnpm dev
 bun dev
 ```
 
+# Next.js Countries Explorer
+
+Aplicación desarrollada con Next.js y TypeScript que permite explorar información de países de todo el mundo. Consume la REST Countries API y ofrece una experiencia moderna, multilenguaje y optimizada.
+
+## Descripción
+
+El objetivo del proyecto es mostrar una lista de países con capacidad de búsqueda, y permitir la visualización del detalle de cada uno, incluyendo su nombre, bandera, capital, población, región, entre otros datos relevantes.
+
+Se ha implementado soporte multilenguaje (inglés y español), diseño responsive con Tailwind CSS, enrutamiento dinámico, renderizado estático, y manejo de errores en la carga de datos.
+
+## Funcionalidades implementadas
+
+- Listado de países con paginación
+- Búsqueda de países por nombre
+- Página de detalle individual con información extendida
+- Soporte multilenguaje con `next-intl` y rutas localizadas (`/en`, `/es`)
+- Renderizado mediante `getStaticProps` y `getStaticPaths`
+- Manejo de errores amigable si la API falla
+- Diseño moderno con Tailwind CSS
+- Estructura escalable basada en separación por capas
+- Accesibilidad básica con etiquetas `alt`, `aria-label`, etc.
+- Uso de `next/image` para optimización de banderas
+- SEO básico usando `Head` por página
+- Context API para gestión de estado (buscador y paginación)
+
+## Estructura del proyecto
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.

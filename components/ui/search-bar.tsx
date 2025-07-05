@@ -14,9 +14,7 @@ export default function SearchBar() {
   const suggestions = useMemo(() => {
     if (!search || search.length < 2) return [];
     return countries
-      .filter((country) =>
-        country.name.common.toLowerCase().includes(search.toLowerCase())
-      )
+      .filter(country => country.name.common.toLowerCase().includes(search.toLowerCase()))
       .slice(0, 5);
   }, [search, countries]);
 
@@ -30,8 +28,8 @@ export default function SearchBar() {
             type="text"
             placeholder={t("placeholder")}
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-12 pr-20 py-4 text-lg bg-white dark:text-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:border-red-500 dark:focus:border-red-500 focus:ring-0 transition-all duration-300 shadow-lg hover:shadow-xl"
+            onChange={e => setSearch(e.target.value)}
+            className="w-full pl-12 pr-20 py-4 text-lg bg-white dark:tex-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl focus:border-red-500 dark:focus:border-red-500 focus:ring-0 transition-all duration-300 shadow-lg hover:shadow-xl"
           />
           <Button
             size="sm"
@@ -50,16 +48,14 @@ export default function SearchBar() {
                 {t("suggestions")}
               </div>
               <div className="space-y-2">
-                {suggestions.map((country) => (
+                {suggestions.map(country => (
                   <button
                     key={country.cca3}
                     onClick={() => setSearch(country.name.common)}
                     className="flex w-full items-center space-x-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
                   >
                     <Search className="h-4 w-4 text-gray-400" />
-                    <span className="text-gray-700 dark:text-gray-300">
-                      {country.name.common}
-                    </span>
+                    <span className="text-gray-700 dark:text-gray-300">{country.name.common}</span>
                   </button>
                 ))}
               </div>
