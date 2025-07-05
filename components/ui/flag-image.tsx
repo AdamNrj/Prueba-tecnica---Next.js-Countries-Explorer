@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface FlagImageProps {
   src: string;
@@ -15,6 +16,8 @@ export default function FlagImage({
   className = "",
 }: FlagImageProps) {
   const [imageError, setImageError] = useState(false);
+
+  const t = useTranslations("FlagImage");
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -31,7 +34,7 @@ export default function FlagImage({
           <div className="text-center">
             <div className="text-red-500 text-2xl mb-2">🏳️</div>
             <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-              Flag Preview
+              {t("fallback")}
             </div>
           </div>
         </div>

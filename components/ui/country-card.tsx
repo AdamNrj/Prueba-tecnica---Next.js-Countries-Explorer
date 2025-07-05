@@ -1,5 +1,7 @@
 "use client";
+
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { MapPin, Users, Building } from "lucide-react";
 import FlagImage from "./flag-image";
 
@@ -16,6 +18,8 @@ interface CountryCardProps {
 }
 
 export default function CountryCard({ country, index }: CountryCardProps) {
+  const t = useTranslations("CountryCard");
+
   return (
     <Link href={`/country/${country.id}`}>
       <div
@@ -46,15 +50,15 @@ export default function CountryCard({ country, index }: CountryCardProps) {
             {country.name}
           </h3>
 
-          {/* Mock Stats */}
+          {/* Translated Stats */}
           <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
             <div className="flex items-center space-x-2">
               <Building className="h-4 w-4 text-red-500" />
-              <span>Capital City</span>
+              <span>{t("capital")}</span>
             </div>
             <div className="flex items-center space-x-2">
               <Users className="h-4 w-4 text-red-500" />
-              <span>Population Info</span>
+              <span>{t("population")}</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4 text-red-500" />
@@ -64,7 +68,7 @@ export default function CountryCard({ country, index }: CountryCardProps) {
 
           {/* Hover Effect Arrow */}
           <div className="mt-4 flex items-center text-red-500 font-medium text-sm opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-            <span>Explore Details</span>
+            <span>{t("explore")}</span>
             <svg
               className="w-4 h-4 ml-1"
               fill="none"
