@@ -14,15 +14,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Countries Explorer - Discover the World",
-  description:
-    "Explore countries around the world with beautiful, interactive design",
+  description: "Explore countries around the world with beautiful, interactive design",
 };
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale();
   const messages = await getMessages();
 
