@@ -1,8 +1,11 @@
 "use client";
 
 import { Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
+  const t = useTranslations("HeroSection");
+
   return (
     <section className="relative py-20 overflow-hidden">
       {/* Background Elements */}
@@ -15,27 +18,26 @@ export default function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-red-50 dark:bg-red-950/30 text-red-600 dark:text-red-400 px-4 py-2 rounded-full text-sm font-medium mb-8 border border-red-200 dark:border-red-800">
             <Sparkles className="h-4 w-4" />
-            <span>Explore 195+ Countries</span>
+            <span>{t("badge")}</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent">
-              Explore the
+              {t("heading1")}
             </span>
             <br />
             <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent animate-pulse">
-              World
+              {t("heading2")}
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Discover fascinating details about every country on Earth. From
-            capitals to cultures,
+            {t("subtitle")}
             <span className="text-red-500 font-semibold">
               {" "}
-              embark on a journey of global discovery
+              {t("subtitleHighlight")}
             </span>
             .
           </p>
@@ -47,7 +49,7 @@ export default function HeroSection() {
                 195+
               </div>
               <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                Countries
+                {t("stats.countries")}
               </div>
             </div>
             <div className="group">
@@ -55,7 +57,7 @@ export default function HeroSection() {
                 7
               </div>
               <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                Continents
+                {t("stats.continents")}
               </div>
             </div>
             <div className="group">
@@ -63,7 +65,7 @@ export default function HeroSection() {
                 ∞
               </div>
               <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                Discoveries
+                {t("stats.discoveries")}
               </div>
             </div>
           </div>

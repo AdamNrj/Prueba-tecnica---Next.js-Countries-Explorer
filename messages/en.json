@@ -5,5 +5,37 @@
     "discoverSubtitle": "Click on any country to explore detailed information",
     "countriesFound": "countries found",
     "ctaButton": "Explore More"
+  },
+  "Navbar": {
+    "title": "Countries Explorer",
+    "subtitle": "Discover the World"
+  },
+  "HeroSection": {
+    "badge": "Explore 195+ Countries",
+    "heading1": "Explore the",
+    "heading2": "World",
+    "subtitle": "Discover fascinating details about every country on Earth. From capitals to cultures,",
+    "subtitleHighlight": "embark on a journey of global discovery",
+    "stats": {
+      "countries": "Countries",
+      "continents": "Continents",
+      "discoveries": "Discoveries"
+    }
+  },
+  "SearchBar": {
+    "placeholder": "Search for a country...",
+    "popularSearches": "Popular Searches"
+  },
+  "CountryCard": {
+    "capital": "Capital City",
+    "population": "Population Info",
+    "region": "Region",
+    "explore": "Explore Details"
+  },
+  "FlagImage": {
+    "fallback": "Flag Preview"
+  },
+  "BackButton": {
+    "label": "Back to Countries"
   }
 }
