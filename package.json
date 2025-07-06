@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "test": "jest"
+    "test": "jest",
+    "clean": "rm -rf .next && rm -rf .next/types"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.15",

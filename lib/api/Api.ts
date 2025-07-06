@@ -1,5 +1,12 @@
 const apiBase = process.env.NEXT_PUBLIC_API_URL ?? "https://restcountries.com/v3.1";
 
+interface ApiError extends Error {
+  response?: {
+    status: number;
+    data: unknown;
+  };
+}
+
 export async function api<T>(path: string, options: RequestInit = {}): Promise<T> {
   const isServer = typeof window === "undefined";
   const accessToken = !isServer ? localStorage.getItem("accessToken") : null;
@@ -17,8 +24,8 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
 
   if (!res.ok) {
     const errorBody = await res.json().catch(() => ({}));
-    const error = new Error(errorBody?.detail ?? `API error (${res.status})`) as any;
 
+    const error: ApiError = new Error(errorBody?.detail ?? `API error (${res.status})`);
     error.response = {
       status: res.status,
       data: errorBody,
@@ -27,5 +34,5 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
     throw error;
   }
 
-  return res.json();
+  return res.json() as Promise<T>;
 }
